@@ -27,7 +27,7 @@
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     
     // 注销
-    [app signOut];
+//    [app signOut];
 }
 
 - (void)didReceiveMemoryWarning {

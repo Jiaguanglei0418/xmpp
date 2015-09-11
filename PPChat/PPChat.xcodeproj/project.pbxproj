@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921D8E8C1BA2712C0040FFC3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D8E8B1BA2712C0040FFC3 /* Login.storyboard */; };
+		921D8E901BA27B000040FFC3 /* PPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E8F1BA27B000040FFC3 /* PPLoginViewController.m */; };
+		921D8E931BA27D8C0040FFC3 /* PPOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E921BA27D8C0040FFC3 /* PPOtherLoginViewController.m */; };
+		921D8E971BA282AC0040FFC3 /* UIImage+JGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E961BA282AC0040FFC3 /* UIImage+JGL.m */; };
+		921D8E9B1BA286E80040FFC3 /* UIButton+setBg.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E9A1BA286E80040FFC3 /* UIButton+setBg.m */; };
+		921D8EA21BA2B2BE0040FFC3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E9E1BA2B2BE0040FFC3 /* MBProgressHUD+MJ.m */; };
+		921D8EA31BA2B2BE0040FFC3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 921D8E9F1BA2B2BE0040FFC3 /* MBProgressHUD.bundle */; };
+		921D8EA41BA2B2BE0040FFC3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EA11BA2B2BE0040FFC3 /* MBProgressHUD.m */; };
+		921D8EA91BA2D1AA0040FFC3 /* PPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */; };
+		921D8EAC1BA2E0D20040FFC3 /* PPMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */; };
+		921D8EB11BA2EA2B0040FFC3 /* PPUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */; };
 		9230AFA61BA1D61B000CCCCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9230AFA51BA1D61B000CCCCA /* main.m */; };
 		9230AFAF1BA1D61B000CCCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9230AFAD1BA1D61B000CCCCA /* Main.storyboard */; };
 		9230AFB11BA1D61B000CCCCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9230AFB01BA1D61B000CCCCA /* Images.xcassets */; };
@@ -157,6 +168,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921D8E8B1BA2712C0040FFC3 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		921D8E8E1BA27B000040FFC3 /* PPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPLoginViewController.h; path = PPChat/Classes/Login/PPLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		921D8E8F1BA27B000040FFC3 /* PPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLoginViewController.m; path = PPChat/Classes/Login/PPLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		921D8E911BA27D8C0040FFC3 /* PPOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOtherLoginViewController.h; path = PPChat/Classes/Login/PPOtherLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		921D8E921BA27D8C0040FFC3 /* PPOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOtherLoginViewController.m; path = PPChat/Classes/Login/PPOtherLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		921D8E951BA282AC0040FFC3 /* UIImage+JGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JGL.h"; sourceTree = "<group>"; };
+		921D8E961BA282AC0040FFC3 /* UIImage+JGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JGL.m"; sourceTree = "<group>"; };
+		921D8E991BA286E80040FFC3 /* UIButton+setBg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+setBg.h"; sourceTree = "<group>"; };
+		921D8E9A1BA286E80040FFC3 /* UIButton+setBg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+setBg.m"; sourceTree = "<group>"; };
+		921D8E9D1BA2B2BE0040FFC3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
+		921D8E9E1BA2B2BE0040FFC3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
+		921D8E9F1BA2B2BE0040FFC3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		921D8EA01BA2B2BE0040FFC3 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		921D8EA11BA2B2BE0040FFC3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		921D8EA71BA2D1AA0040FFC3 /* PPNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNavigationViewController.h; sourceTree = "<group>"; };
+		921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNavigationViewController.m; sourceTree = "<group>"; };
+		921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMeTableViewController.h; sourceTree = "<group>"; };
+		921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMeTableViewController.m; sourceTree = "<group>"; };
+		921D8EAE1BA2E9B00040FFC3 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		921D8EAF1BA2EA2B0040FFC3 /* PPUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUserInfo.h; sourceTree = "<group>"; };
+		921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUserInfo.m; sourceTree = "<group>"; };
 		9230AFA01BA1D61B000CCCCA /* PPChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9230AFA41BA1D61B000CCCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9230AFA51BA1D61B000CCCCA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -461,6 +493,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921D8E941BA282AC0040FFC3 /* UIImage+JGL */ = {
+			isa = PBXGroup;
+			children = (
+				921D8E951BA282AC0040FFC3 /* UIImage+JGL.h */,
+				921D8E961BA282AC0040FFC3 /* UIImage+JGL.m */,
+			);
+			name = "UIImage+JGL";
+			path = "../UIImage+JGL";
+			sourceTree = "<group>";
+		};
+		921D8E981BA2865E0040FFC3 /* UIButton+SetBg */ = {
+			isa = PBXGroup;
+			children = (
+				921D8E991BA286E80040FFC3 /* UIButton+setBg.h */,
+				921D8E9A1BA286E80040FFC3 /* UIButton+setBg.m */,
+			);
+			path = "UIButton+SetBg";
+			sourceTree = "<group>";
+		};
+		921D8E9C1BA2B2BE0040FFC3 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				921D8E9D1BA2B2BE0040FFC3 /* MBProgressHUD+MJ.h */,
+				921D8E9E1BA2B2BE0040FFC3 /* MBProgressHUD+MJ.m */,
+				921D8E9F1BA2B2BE0040FFC3 /* MBProgressHUD.bundle */,
+				921D8EA01BA2B2BE0040FFC3 /* MBProgressHUD.h */,
+				921D8EA11BA2B2BE0040FFC3 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		921D8EA51BA2D1300040FFC3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				921D8EAD1BA2E95B0040FFC3 /* Singleton */,
+				921D8EA61BA2D15B0040FFC3 /* Controllers */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		921D8EA61BA2D15B0040FFC3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				921D8EA71BA2D1AA0040FFC3 /* PPNavigationViewController.h */,
+				921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		921D8EAD1BA2E95B0040FFC3 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				921D8EAE1BA2E9B00040FFC3 /* Singleton.h */,
+				921D8EAF1BA2EA2B0040FFC3 /* PPUserInfo.h */,
+				921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		9230AF971BA1D61B000CCCCA = {
 			isa = PBXGroup;
 			children = (
@@ -493,7 +584,6 @@
 		9230AFA31BA1D61B000CCCCA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9230AFAD1BA1D61B000CCCCA /* Main.storyboard */,
 				9230B1AB1BA1D6B6000CCCCA /* PrefixHeader.pch */,
 				9230AFB01BA1D61B000CCCCA /* Images.xcassets */,
 				9230AFB21BA1D61B000CCCCA /* LaunchScreen.xib */,
@@ -524,8 +614,9 @@
 			isa = PBXGroup;
 			children = (
 				9230AFCA1BA1D66A000CCCCA /* lib */,
-				9230B1191BA1D66A000CCCCA /* Main */,
-				9230B11F1BA1D66A000CCCCA /* Main副本 */,
+				921D8EA51BA2D1300040FFC3 /* Common */,
+				9230B1191BA1D66A000CCCCA /* Main(主要) */,
+				9230B11F1BA1D66A000CCCCA /* Login(登录) */,
 				9230B1231BA1D66A000CCCCA /* others */,
 			);
 			path = Classes;
@@ -534,6 +625,9 @@
 		9230AFCA1BA1D66A000CCCCA /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				921D8E9C1BA2B2BE0040FFC3 /* MBProgressHUD */,
+				921D8E981BA2865E0040FFC3 /* UIButton+SetBg */,
+				921D8E941BA282AC0040FFC3 /* UIImage+JGL */,
 				9230AFCB1BA1D66A000CCCCA /* xmpp */,
 			);
 			path = lib;
@@ -1323,13 +1417,15 @@
 			path = libidn;
 			sourceTree = "<group>";
 		};
-		9230B1191BA1D66A000CCCCA /* Main */ = {
+		9230B1191BA1D66A000CCCCA /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				9230AFAD1BA1D61B000CCCCA /* Main.storyboard */,
 				9230B11A1BA1D66A000CCCCA /* controllers */,
 				9230B11D1BA1D66A000CCCCA /* models */,
 				9230B11E1BA1D66A000CCCCA /* views */,
 			);
+			name = "Main(主要)";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -1338,6 +1434,8 @@
 			children = (
 				9230B11B1BA1D66A000CCCCA /* ViewController.h */,
 				9230B11C1BA1D66A000CCCCA /* ViewController.m */,
+				921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */,
+				921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -1356,19 +1454,25 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		9230B11F1BA1D66A000CCCCA /* Main副本 */ = {
+		9230B11F1BA1D66A000CCCCA /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
+				921D8E8B1BA2712C0040FFC3 /* Login.storyboard */,
 				9230B1201BA1D66A000CCCCA /* controllers */,
 				9230B1211BA1D66A000CCCCA /* models */,
 				9230B1221BA1D66A000CCCCA /* views */,
 			);
-			path = "Main副本";
+			name = "Login(登录)";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		9230B1201BA1D66A000CCCCA /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				921D8E8E1BA27B000040FFC3 /* PPLoginViewController.h */,
+				921D8E8F1BA27B000040FFC3 /* PPLoginViewController.m */,
+				921D8E911BA27D8C0040FFC3 /* PPOtherLoginViewController.h */,
+				921D8E921BA27D8C0040FFC3 /* PPOtherLoginViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -1502,9 +1606,11 @@
 			files = (
 				9230B1A71BA1D66A000CCCCA /* build-libidn.sh in Resources */,
 				9230AFAF1BA1D61B000CCCCA /* Main.storyboard in Resources */,
+				921D8E8C1BA2712C0040FFC3 /* Login.storyboard in Resources */,
 				9230AFB41BA1D61B000CCCCA /* LaunchScreen.xib in Resources */,
 				9230B1A21BA1D66A000CCCCA /* README.txt in Resources */,
 				9230AFB11BA1D61B000CCCCA /* Images.xcassets in Resources */,
+				921D8EA31BA2B2BE0040FFC3 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1551,6 +1657,7 @@
 				9230B14E1BA1D66A000CCCCA /* XMPPLastActivity.m in Sources */,
 				9230B17B1BA1D66A000CCCCA /* XMPPCapsResourceCoreDataStorageObject.m in Sources */,
 				9230B1451BA1D66A000CCCCA /* XMPPResourceMemoryStorageObject.m in Sources */,
+				921D8E931BA27D8C0040FFC3 /* PPOtherLoginViewController.m in Sources */,
 				9230B1961BA1D66A000CCCCA /* RFImageToDataTransformer.m in Sources */,
 				9230B13D1BA1D66A000CCCCA /* XMPPGoogleSharedStatus.m in Sources */,
 				9230B1541BA1D66A000CCCCA /* XMPPRoomHybrid.xcdatamodeld in Sources */,
@@ -1560,6 +1667,7 @@
 				9230B1A61BA1D66A000CCCCA /* DDXMLNode.m in Sources */,
 				9230B1361BA1D66A000CCCCA /* XMPPMessage.m in Sources */,
 				9230B1331BA1D66A000CCCCA /* XMPPElement.m in Sources */,
+				921D8EA21BA2B2BE0040FFC3 /* MBProgressHUD+MJ.m in Sources */,
 				9230B1661BA1D66A000CCCCA /* XMPPvCardTempBase.m in Sources */,
 				9230B1701BA1D66A000CCCCA /* XMPPIQ+XEP_0066.m in Sources */,
 				9230B1931BA1D66A000CCCCA /* NSXMLElement+XEP_0335.m in Sources */,
@@ -1578,8 +1686,10 @@
 				9230B14D1BA1D66A000CCCCA /* XMPPIQ+LastActivity.m in Sources */,
 				9230B18C1BA1D66A000CCCCA /* NSXMLElement+XEP_0203.m in Sources */,
 				9230B1591BA1D66A000CCCCA /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
+				921D8E9B1BA286E80040FFC3 /* UIButton+setBg.m in Sources */,
 				9230B18F1BA1D66A000CCCCA /* XMPPMessage+XEP_0224.m in Sources */,
 				9230B12A1BA1D66A000CCCCA /* XMPPDeprecatedDigestAuthentication.m in Sources */,
+				921D8EAC1BA2E0D20040FFC3 /* PPMeTableViewController.m in Sources */,
 				9230B1831BA1D66A000CCCCA /* XMPPMessage+XEP_0172.m in Sources */,
 				9230B16A1BA1D66A000CCCCA /* XMPPvCardTempTel.m in Sources */,
 				9230B1751BA1D66A000CCCCA /* XMPPSoftwareVersion.m in Sources */,
@@ -1598,6 +1708,7 @@
 				9230B15F1BA1D66A000CCCCA /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				9230B1501BA1D66A000CCCCA /* XMPPRoom.xcdatamodeld in Sources */,
 				9230B19F1BA1D66A000CCCCA /* DDTTYLogger.m in Sources */,
+				921D8EA41BA2B2BE0040FFC3 /* MBProgressHUD.m in Sources */,
 				9230B1981BA1D66A000CCCCA /* XMPPSRVResolver.m in Sources */,
 				9230B1491BA1D66A000CCCCA /* XMPPSystemInputActivityMonitor.m in Sources */,
 				9230B1901BA1D66A000CCCCA /* NSXMLElement+XEP_0297.m in Sources */,
@@ -1619,6 +1730,7 @@
 				9230B1681BA1D66A000CCCCA /* XMPPvCardTempLabel.m in Sources */,
 				9230B1841BA1D66A000CCCCA /* XMPPPresence+XEP_0172.m in Sources */,
 				9230B14C1BA1D66A000CCCCA /* XMPPJabberRPCModule.m in Sources */,
+				921D8EA91BA2D1AA0040FFC3 /* PPNavigationViewController.m in Sources */,
 				9230B1731BA1D66A000CCCCA /* XMPPDateTimeProfiles.m in Sources */,
 				9230B1711BA1D66A000CCCCA /* XMPPMessage+XEP_0066.m in Sources */,
 				9230B1341BA1D66A000CCCCA /* XMPPIQ.m in Sources */,
@@ -1632,12 +1744,14 @@
 				9230B1951BA1D66A000CCCCA /* GCDMulticastDelegate.m in Sources */,
 				9230B17E1BA1D66A000CCCCA /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
 				9230B1441BA1D66A000CCCCA /* XMPPUserCoreDataStorageObject.m in Sources */,
+				921D8EB11BA2EA2B0040FFC3 /* PPUserInfo.m in Sources */,
 				9230B1551BA1D66A000CCCCA /* XMPPRoomHybridStorage.m in Sources */,
 				9230B1521BA1D66A000CCCCA /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
 				9230B1741BA1D66A000CCCCA /* XMPPMessage+XEP_0085.m in Sources */,
 				9230B19A1BA1D66A000CCCCA /* GCDAsyncSocket.m in Sources */,
 				9230B1611BA1D66A000CCCCA /* XMPPvCardCoreDataStorageObject.m in Sources */,
 				9230B1A31BA1D66A000CCCCA /* NSString+DDXML.m in Sources */,
+				921D8E901BA27B000040FFC3 /* PPLoginViewController.m in Sources */,
 				9230B1991BA1D66A000CCCCA /* XMPPStringPrep.m in Sources */,
 				9230AFA61BA1D61B000CCCCA /* main.m in Sources */,
 				9230B18E1BA1D66A000CCCCA /* XMPPAttentionModule.m in Sources */,
@@ -1648,6 +1762,7 @@
 				9230B1391BA1D66A000CCCCA /* XMPPPresence.m in Sources */,
 				9230B1581BA1D66A000CCCCA /* XMPPRoomMemoryStorage.m in Sources */,
 				9230B1A91BA1D66A000CCCCA /* ViewController.m in Sources */,
+				921D8E971BA282AC0040FFC3 /* UIImage+JGL.m in Sources */,
 				9230B16B1BA1D66A000CCCCA /* NSXMLElement+XEP_0059.m in Sources */,
 				9230B1851BA1D66A000CCCCA /* XMPPMessage+XEP_0184.m in Sources */,
 			);
@@ -1678,6 +1793,7 @@
 				9230AFAE1BA1D61B000CCCCA /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		9230AFB21BA1D61B000CCCCA /* LaunchScreen.xib */ = {
@@ -1874,6 +1990,7 @@
 				9230AFC51BA1D61B000CCCCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9230AFC61BA1D61B000CCCCA /* Build configuration list for PBXNativeTarget "PPChatTests" */ = {
 			isa = XCConfigurationList;
@@ -1882,6 +1999,7 @@
 				9230AFC81BA1D61B000CCCCA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
