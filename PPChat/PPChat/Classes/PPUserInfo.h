@@ -20,6 +20,10 @@ singleton_interface(PPUserInfo)
 @property (nonatomic, assign) BOOL loginStatus; // 登录状态 yes-登录 no-注销
 
 
+@property (nonatomic, copy) NSString *registerUsername; // 注册的用户名
+@property (nonatomic, copy) NSString *registerPassword; // 注册的用户密码
+
+
 // 将用户信息保存到沙盒
 - (void)saveUserInfoToSandbox;
 

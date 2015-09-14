@@ -16,6 +16,7 @@
 
 #import "UIImage+JGL.h"
 #import "UIButton+setBg.h"
+#import "UITextField+JGL.h"
 #import "MBProgressHUD+MJ.h"
 
 
@@ -37,7 +38,7 @@
 // ---------------------------- 打印日志  ----------------------------------
 // 自定义log
 #ifdef DEBUG
-#define PPLog(FORMAT, ...) fprintf(stderr,"\n%s %d\n %s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define PPLog(FORMAT, ...) fprintf(stderr,"\n%s %d\n %s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
 //#define PPLog(...) NSLog(@"%s %@",__func__, [NSString stringWithFormat:__VA_ARGS__])
 
 #else

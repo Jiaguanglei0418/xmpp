@@ -7,9 +7,8 @@
 //
 // ----      其他方式登录控制器
 
+#import "PPBaseLoginViewController.h"
 
-#import <UIKit/UIKit.h>
-
-@interface PPOtherLoginViewController : UIViewController
+@interface PPOtherLoginViewController : PPBaseLoginViewController
 
 @end

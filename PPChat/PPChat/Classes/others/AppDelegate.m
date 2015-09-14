@@ -68,8 +68,13 @@
     // 设置JID
     // resource: 标识用户登录客户端, iPhone,android
     
-    // 从内存中获取用户名
-    NSString *user = [PPUserInfo sharedPPUserInfo].username;
+    NSString *user = nil;
+
+    if (self.isRegisterOperation) { // ---  注册
+        user = [PPUserInfo sharedPPUserInfo].registerUsername;
+    }else{ // 从内存中获取用户名  ---  登录
+        user = [PPUserInfo sharedPPUserInfo].username;
+    }
     
     XMPPJID *myJID = [XMPPJID jidWithUser:user domain:PP_DOMAIN resource:@"iPhone"];
     _xmppStream.myJID = myJID;
@@ -97,12 +102,19 @@
     
     NSError *error = nil;
  
-    // 从沙盒中获取密码
-//    NSString *pwd = [PP_NSUSRDEFAULT objectForKey:KEY_PWD];
     // 从内存中获取 密码
-    NSString *pwd = [PPUserInfo sharedPPUserInfo].password;
-    
-    [_xmppStream authenticateWithPassword:pwd error:&error];
+    if(self.isRegisterOperation){ // 注册
+        NSString *pwd = [PPUserInfo sharedPPUserInfo].registerPassword;
+        
+        // 注册 - 发送注册密码
+        [_xmppStream registerWithPassword:pwd error:nil];
+    }else{ // 登录
+        NSString *pwd = [PPUserInfo sharedPPUserInfo].password;
+        
+        // 登录 - 请求授权
+        [_xmppStream authenticateWithPassword:pwd error:&error];
+    }
+  
     if (error) {
         PPLog(@"%@ ",error);
     };
@@ -128,7 +140,9 @@
     PPLog(@"与主机连接成功");
     
     // 与主机连接成功后, 发送密码进行授权
+  
     [self sendPasswordTohost];
+
 }
 
 
@@ -146,6 +160,28 @@
     }
 }
 
+
+#pragma mark - 注册成功
+- (void)xmppStreamDidRegister:(XMPPStream *)sender
+{
+    LogRed(@"注册成功");
+    // 回调控制器 - 注册成功
+    if(_resultBlock){
+        _resultBlock(XMPPResultTypeRegisterSuccess);
+    }
+}
+
+#pragma mark - 注册失败
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error
+{
+    if (error) {
+        LogGreen(@"注册失败 -- %@",error);
+        // 回调控制器 - 注册成功
+        if(_resultBlock){
+            _resultBlock(XMPPResultTypeRegisterFailure);
+        }
+    }
+}
 
 #pragma mark - 授权成功
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
@@ -193,6 +229,21 @@
 
 
 #pragma mark - 注销
+- (void)xmppUserRegister:(XMPPResultBlock)resultBlock
+{
+    // 先把block存起来
+    _resultBlock = resultBlock;
+    
+    // 登录之前 断开连接
+    [_xmppStream disconnect];
+    
+    // 连接到主机
+    [self connectToHost];
+    
+}
+
+
+#pragma mark - 注销
 - (void)xmppUserSignOut
 {
     // 0. 更新用户登录状态
@@ -211,7 +262,6 @@
     // 3. 回到登陆界面
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
     self.window.rootViewController = storyboard.instantiateInitialViewController;
-    
     
 
     PPLog(@"注销");
@@ -246,8 +296,6 @@
         self.window.rootViewController = storyboard.instantiateInitialViewController;
     }
     
-    
-//    [self.window makeKeyAndVisible];
     return YES;
 }
 

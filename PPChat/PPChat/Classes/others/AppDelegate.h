@@ -20,7 +20,9 @@
 typedef enum {
     XMPPResultTypeLoginSuccess, // 登录成功
     XMPPResultTypeLoginFailure, // 失败
-    XMPPResultTypeNetError // 网络不给力
+    XMPPResultTypeNetError, // 网络不给力
+    XMPPResultTypeRegisterSuccess, // 注册成功
+    XMPPResultTypeRegisterFailure  // 注册失败
 }XMPPResultType;
 
 typedef void (^XMPPResultBlock) (XMPPResultType type); // 登录请求结果block
@@ -28,6 +30,13 @@ typedef void (^XMPPResultBlock) (XMPPResultType type); // 登录请求结果bloc
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+
+/**
+ *  注册标识  yes - 注册  no - 登录
+ */
+@property (nonatomic, assign, getter=isRegisterOperation) BOOL registerOperation;
+
 
 /**
  *  用户登录
@@ -39,5 +48,9 @@ typedef void (^XMPPResultBlock) (XMPPResultType type); // 登录请求结果bloc
  */
 - (void)xmppUserSignOut;
 
+/**
+ *  用户注册
+ */
+- (void)xmppUserRegister:(XMPPResultBlock)resultBlock;
 @end
 
