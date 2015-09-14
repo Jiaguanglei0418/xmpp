@@ -35,4 +35,11 @@ singleton_implementation(PPUserInfo)
     self.password = [PP_NSUSRDEFAULT objectForKey:KEY_PWD];
     self.loginStatus = [PP_NSUSRDEFAULT boolForKey:KEY_LoginStatus];
 }
+
+
+
+- (NSString *)JID
+{
+    return [NSString stringWithFormat:@"%@@%@",self.username,PP_DOMAIN];
+}
 @end

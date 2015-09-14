@@ -163,6 +163,8 @@
 		92CEA8BC1BA6B1F10047F3E9 /* XMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8B91BA6B1F10047F3E9 /* XMPPTool.m */; };
 		92CEA8C01BA6B3FD0047F3E9 /* UIStoryboard+JGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8BF1BA6B3FD0047F3E9 /* UIStoryboard+JGL.m */; };
 		92CEA8C31BA6E72F0047F3E9 /* PPProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */; };
+		92CEA8C61BA719690047F3E9 /* PPEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8C51BA719690047F3E9 /* PPEditProfileViewController.m */; };
+		92CEA8CB1BA730FF0047F3E9 /* PPContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8CA1BA730FF0047F3E9 /* PPContactTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -495,6 +497,10 @@
 		92CEA8BF1BA6B3FD0047F3E9 /* UIStoryboard+JGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+JGL.m"; sourceTree = "<group>"; };
 		92CEA8C11BA6E72F0047F3E9 /* PPProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPProfileTableViewController.h; sourceTree = "<group>"; };
 		92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPProfileTableViewController.m; sourceTree = "<group>"; };
+		92CEA8C41BA719690047F3E9 /* PPEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPEditProfileViewController.h; sourceTree = "<group>"; };
+		92CEA8C51BA719690047F3E9 /* PPEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPEditProfileViewController.m; sourceTree = "<group>"; };
+		92CEA8C91BA730FF0047F3E9 /* PPContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPContactTableViewController.h; sourceTree = "<group>"; };
+		92CEA8CA1BA730FF0047F3E9 /* PPContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPContactTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,12 +609,10 @@
 		9230B11A1BA1D66A000CCCCA /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				92CEA8C81BA730DC0047F3E9 /* 通讯录 */,
+				92CEA8C71BA730D30047F3E9 /* ME */,
 				9230B11B1BA1D66A000CCCCA /* ViewController.h */,
 				9230B11C1BA1D66A000CCCCA /* ViewController.m */,
-				921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */,
-				921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */,
-				92CEA8C11BA6E72F0047F3E9 /* PPProfileTableViewController.h */,
-				92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -926,7 +930,7 @@
 				92CEA7351BA66EDD0047F3E9 /* XEP-0012 */,
 				92CEA73A1BA66EDD0047F3E9 /* XEP-0016 */,
 				92CEA73D1BA66EDD0047F3E9 /* XEP-0045 */,
-				92CEA7611BA66EDD0047F3E9 /* XEP-0054 */,
+				92CEA7611BA66EDD0047F3E9 /* XEP-0054[电子名片] */,
 				92CEA77D1BA66EDD0047F3E9 /* XEP-0059 */,
 				92CEA7821BA66EDD0047F3E9 /* XEP-0060 */,
 				92CEA7871BA66EDD0047F3E9 /* XEP-0065 */,
@@ -1148,7 +1152,7 @@
 			path = MemoryStorage;
 			sourceTree = "<group>";
 		};
-		92CEA7611BA66EDD0047F3E9 /* XEP-0054 */ = {
+		92CEA7611BA66EDD0047F3E9 /* XEP-0054[电子名片] */ = {
 			isa = PBXGroup;
 			children = (
 				92CEA7621BA66EDD0047F3E9 /* CoreDataStorage */,
@@ -1169,6 +1173,7 @@
 				92CEA77B1BA66EDD0047F3E9 /* XMPPvCardTempTel.h */,
 				92CEA77C1BA66EDD0047F3E9 /* XMPPvCardTempTel.m */,
 			);
+			name = "XEP-0054[电子名片]";
 			path = "XEP-0054";
 			sourceTree = "<group>";
 		};
@@ -1637,6 +1642,28 @@
 			path = "UIStoryboard+JGL";
 			sourceTree = "<group>";
 		};
+		92CEA8C71BA730D30047F3E9 /* ME */ = {
+			isa = PBXGroup;
+			children = (
+				921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */,
+				921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */,
+				92CEA8C11BA6E72F0047F3E9 /* PPProfileTableViewController.h */,
+				92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */,
+				92CEA8C41BA719690047F3E9 /* PPEditProfileViewController.h */,
+				92CEA8C51BA719690047F3E9 /* PPEditProfileViewController.m */,
+			);
+			name = ME;
+			sourceTree = "<group>";
+		};
+		92CEA8C81BA730DC0047F3E9 /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				92CEA8C91BA730FF0047F3E9 /* PPContactTableViewController.h */,
+				92CEA8CA1BA730FF0047F3E9 /* PPContactTableViewController.m */,
+			);
+			name = "通讯录";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1751,6 +1778,7 @@
 				92CEA8441BA66EDD0047F3E9 /* XMPPUserMemoryStorageObject.m in Sources */,
 				92CEA81D1BA66EDD0047F3E9 /* UIScreen+WF.m in Sources */,
 				92CEA84D1BA66EDD0047F3E9 /* XMPPRoom.xcdatamodeld in Sources */,
+				92CEA8C61BA719690047F3E9 /* PPEditProfileViewController.m in Sources */,
 				921D8E931BA27D8C0040FFC3 /* PPOtherLoginViewController.m in Sources */,
 				92CEA8481BA66EDD0047F3E9 /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				92CEA87C1BA66EDD0047F3E9 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
@@ -1868,6 +1896,7 @@
 				92CEA82C1BA66EDD0047F3E9 /* XMPPXOAuth2Google.m in Sources */,
 				92CEA85A1BA66EDD0047F3E9 /* XMPPRoom.m in Sources */,
 				92CEA8591BA66EDD0047F3E9 /* XMPPMUC.m in Sources */,
+				92CEA8CB1BA730FF0047F3E9 /* PPContactTableViewController.m in Sources */,
 				9230AFA61BA1D61B000CCCCA /* main.m in Sources */,
 				92CEA86A1BA66EDD0047F3E9 /* XMPPIQ+XEP_0060.m in Sources */,
 				92CEA82D1BA66EDD0047F3E9 /* NSData+XMPP.m in Sources */,

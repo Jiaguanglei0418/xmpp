@@ -24,6 +24,8 @@ singleton_interface(PPUserInfo)
 @property (nonatomic, copy) NSString *registerPassword; // 注册的用户密码
 
 
+@property (nonatomic, copy) NSString *JID;
+
 // 将用户信息保存到沙盒
 - (void)saveUserInfoToSandbox;
 

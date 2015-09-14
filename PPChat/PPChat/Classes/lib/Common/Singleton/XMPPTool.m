@@ -16,6 +16,9 @@
     
     XMPPvCardCoreDataStorage *_vCardStorage; //电子名片数据库
     XMPPvCardAvatarModule *_avatar; // 头像
+    
+    XMPPRoster *_roster;// 花名册模块
+    
 }
 
 // 1. 初始化xmppStream
@@ -30,6 +33,8 @@
 // 4.授权成功以后, 发送在线消息
 - (void)sendOnlineToHost;
 
+// 释放 xmpp相关资源
+- (void)teardownXMPP;
 @end
 
 
@@ -51,19 +56,30 @@ singleton_implementation(XMPPTool)
     // 1.1.1 创建对象
     _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
     _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
-    
     // 1.1.2 激活
     [_vCard activate:_xmppStream];
     
 
     // 1.2 添加头像模块
     _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
-    
     // 1.2.2 激活
     [_avatar activate:_xmppStream];
     
     
+    // 1.3 添加自动连接模块
+    _reconnect = [[XMPPReconnect alloc] init];
+    // 激活
+    [_reconnect activate:_xmppStream];
     
+    
+    // 1.4 添加花名册模块 - 获取好友列表
+    _rosterStorage = [[XMPPRosterCoreDataStorage alloc] init];
+    _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorage];
+    // 激活
+    [_roster activate:_xmppStream];
+    
+    
+
     // 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
@@ -142,6 +158,32 @@ singleton_implementation(XMPPTool)
     //
     [_xmppStream sendElement:presence];
 }
+
+#pragma mark - 5. 释放xmpp相关资源
+- (void)teardownXMPP
+{
+    // 移除代理
+    [_xmppStream removeDelegate:self];
+
+    // 停止模块
+    [_reconnect deactivate];
+    [_vCard deactivate];
+    [_avatar deactivate];
+    [_roster deactivate];
+    
+    // 断开连接
+    [_xmppStream disconnect];
+    
+    // 清空资源
+    _reconnect = nil;
+    _vCard = nil;
+    _avatar = nil;
+    _vCardStorage = nil;
+    _xmppStream = nil;
+    _roster = nil;
+    _rosterStorage = nil;
+}
+
 
 //------------------------------- XMPPStreamDelegate ---------------------------------
 #pragma mark - XMPPStreamDelegate
@@ -223,6 +265,7 @@ singleton_implementation(XMPPTool)
     }
 }
 
+
 // ---------------------------------  公共方法  ----------------------------------------
 #pragma mark - 公共方法
 #pragma mark - 登录
@@ -280,6 +323,9 @@ singleton_implementation(XMPPTool)
 }
 
 
-
+- (void)dealloc
+{
+    [self teardownXMPP];
+}
 
 @end

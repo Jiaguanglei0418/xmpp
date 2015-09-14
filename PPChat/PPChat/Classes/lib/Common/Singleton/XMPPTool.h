@@ -38,6 +38,12 @@ singleton_interface(XMPPTool)
 
 @property (nonatomic, strong) XMPPvCardTempModule *vCard;//电子名片 - 便于meCon 调用
 
+@property (nonatomic, strong) XMPPReconnect *reconnect;//自动连接模块
+
+@property (nonatomic, strong) XMPPRosterCoreDataStorage *rosterStorage;// 花名册 - 数据存储;
+
+
+
 /**
  *  注册标识  yes - 注册  no - 登录
  */

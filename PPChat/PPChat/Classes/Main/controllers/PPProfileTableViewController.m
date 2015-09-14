@@ -8,8 +8,9 @@
 
 #import "PPProfileTableViewController.h"
 #import "XMPPvCardTemp.h"
+#import "PPEditProfileViewController.h"
 
-@interface PPProfileTableViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface PPProfileTableViewController ()<UIActionSheetDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate,PPEditProfileViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;//头像
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel; // 昵称
@@ -85,6 +86,10 @@
             return;
         case 1: // 跳转到详情Con
             LogRed(@"跳转-----");
+            
+            // 跳转
+            [self performSegueWithIdentifier:@"EditVCardSegue" sender:cell];
+            
             break;
         case 0: // 选择图片
         { LogRed(@"选着头像图片");
@@ -101,6 +106,64 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+
+/**
+ *  通过segue 跳转的时候会调用此方法
+ *
+ *  @param segue  跳转控制点
+ *  @param sender cell - 对象
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // 获取个人信息控制
+    id destVc = segue.destinationViewController;
+    
+    if ([destVc isKindOfClass:[PPEditProfileViewController class]]) {
+        PPEditProfileViewController *editVc = destVc;
+        
+        // 设置代理
+        editVc.delegate = self;
+        
+        // 正向传值
+        editVc.cell = sender;
+    }
+}
+
+
+#pragma mark - PPEditProfileViewControllerDelegate 编辑个人信息代理
+- (void)editProfileViewControllerDidSave
+{
+    // 获取当前的电子名片信息
+    XMPPvCardTemp *myVCard = [XMPPTool sharedXMPPTool].vCard.myvCardTemp;
+    
+    // 昵称
+    myVCard.nickname = self.nicknameLabel.text;
+    
+    // 公司
+    myVCard.orgName = self.orgnameLabel.text;
+    
+    // 部门
+    if (self.orgDepartLabel.text.length) {
+        myVCard.orgUnits = @[self.orgDepartLabel.text];
+    }
+    
+    // 职位
+    myVCard.title = self.titleLabel.text;
+    
+    // 电话
+    myVCard.note = self.phoneLabel.text;
+    
+    // 邮件
+    myVCard.mailer = self.emailLabel.text;
+    
+    // 头像
+    myVCard.photo = UIImagePNGRepresentation(self.headerImageView.image);
+    
+    // 更新 -- 此方法内部 会更新到服务器, 无须自己操作
+    [[XMPPTool sharedXMPPTool].vCard updateMyvCardTemp:myVCard];
+}
+
 
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -136,6 +199,17 @@
     
     // 隐藏当前窗口
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 3. 更新到服务器
+    
+    
+//    // 获取当前的电子名片信息
+//    XMPPvCardTemp *vCard = [XMPPTool sharedXMPPTool].vCard.myvCardTemp;
+//    
+//    
+//    // 更新 -- 此方法内部 会更新到服务器, 无须自己操作
+//    [[XMPPTool sharedXMPPTool].vCard updateMyvCardTemp:vCard];
+    
 }
 
 
