@@ -10,9 +10,7 @@
 		921D8E8C1BA2712C0040FFC3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921D8E8B1BA2712C0040FFC3 /* Login.storyboard */; };
 		921D8E901BA27B000040FFC3 /* PPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E8F1BA27B000040FFC3 /* PPLoginViewController.m */; };
 		921D8E931BA27D8C0040FFC3 /* PPOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8E921BA27D8C0040FFC3 /* PPOtherLoginViewController.m */; };
-		921D8EA91BA2D1AA0040FFC3 /* PPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */; };
 		921D8EAC1BA2E0D20040FFC3 /* PPMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */; };
-		921D8EB11BA2EA2B0040FFC3 /* PPUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */; };
 		9230AFA61BA1D61B000CCCCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9230AFA51BA1D61B000CCCCA /* main.m */; };
 		9230AFAF1BA1D61B000CCCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9230AFAD1BA1D61B000CCCCA /* Main.storyboard */; };
 		9230AFB11BA1D61B000CCCCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9230AFB01BA1D61B000CCCCA /* Images.xcassets */; };
@@ -24,7 +22,6 @@
 		9230B1AF1BA1D71A000CCCCA /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9230B1AE1BA1D71A000CCCCA /* libresolv.dylib */; };
 		92CEA6B41BA66A140047F3E9 /* PPBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6B31BA66A140047F3E9 /* PPBaseLoginViewController.m */; };
 		92CEA81D1BA66EDD0047F3E9 /* UIScreen+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6B91BA66EDD0047F3E9 /* UIScreen+WF.m */; };
-		92CEA81E1BA66EDD0047F3E9 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6BB1BA66EDD0047F3E9 /* UIStoryboard+WF.m */; };
 		92CEA81F1BA66EDD0047F3E9 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6BD1BA66EDD0047F3E9 /* UIView+WF.m */; };
 		92CEA8201BA66EDD0047F3E9 /* UIButton+setBg.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6C11BA66EDD0047F3E9 /* UIButton+setBg.m */; };
 		92CEA8211BA66EDD0047F3E9 /* UIImage+JGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA6C41BA66EDD0047F3E9 /* UIImage+JGL.m */; };
@@ -161,6 +158,11 @@
 		92CEA8A41BA66EDD0047F3E9 /* build-libidn.sh in Resources */ = {isa = PBXBuildFile; fileRef = 92CEA8181BA66EDD0047F3E9 /* build-libidn.sh */; };
 		92CEA8A51BA66EDD0047F3E9 /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CEA81A1BA66EDD0047F3E9 /* libidn.a */; };
 		92CEA8AC1BA671630047F3E9 /* PPRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8AB1BA671630047F3E9 /* PPRegisterViewController.m */; };
+		92CEA8BA1BA6B1F10047F3E9 /* PPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8B31BA6B1F10047F3E9 /* PPNavigationViewController.m */; };
+		92CEA8BB1BA6B1F10047F3E9 /* PPUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8B61BA6B1F10047F3E9 /* PPUserInfo.m */; };
+		92CEA8BC1BA6B1F10047F3E9 /* XMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8B91BA6B1F10047F3E9 /* XMPPTool.m */; };
+		92CEA8C01BA6B3FD0047F3E9 /* UIStoryboard+JGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8BF1BA6B3FD0047F3E9 /* UIStoryboard+JGL.m */; };
+		92CEA8C31BA6E72F0047F3E9 /* PPProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,13 +181,8 @@
 		921D8E8F1BA27B000040FFC3 /* PPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLoginViewController.m; path = PPChat/Classes/Login/PPLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		921D8E911BA27D8C0040FFC3 /* PPOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPOtherLoginViewController.h; path = PPChat/Classes/Login/PPOtherLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		921D8E921BA27D8C0040FFC3 /* PPOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPOtherLoginViewController.m; path = PPChat/Classes/Login/PPOtherLoginViewController.m; sourceTree = SOURCE_ROOT; };
-		921D8EA71BA2D1AA0040FFC3 /* PPNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNavigationViewController.h; sourceTree = "<group>"; };
-		921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNavigationViewController.m; sourceTree = "<group>"; };
 		921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMeTableViewController.h; sourceTree = "<group>"; };
 		921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMeTableViewController.m; sourceTree = "<group>"; };
-		921D8EAE1BA2E9B00040FFC3 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		921D8EAF1BA2EA2B0040FFC3 /* PPUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUserInfo.h; sourceTree = "<group>"; };
-		921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUserInfo.m; sourceTree = "<group>"; };
 		9230AFA01BA1D61B000CCCCA /* PPChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9230AFA41BA1D61B000CCCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9230AFA51BA1D61B000CCCCA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,8 +204,6 @@
 		92CEA6B71BA66EDD0047F3E9 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
 		92CEA6B81BA66EDD0047F3E9 /* UIScreen+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+WF.h"; sourceTree = "<group>"; };
 		92CEA6B91BA66EDD0047F3E9 /* UIScreen+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+WF.m"; sourceTree = "<group>"; };
-		92CEA6BA1BA66EDD0047F3E9 /* UIStoryboard+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+WF.h"; sourceTree = "<group>"; };
-		92CEA6BB1BA66EDD0047F3E9 /* UIStoryboard+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+WF.m"; sourceTree = "<group>"; };
 		92CEA6BC1BA66EDD0047F3E9 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
 		92CEA6BD1BA66EDD0047F3E9 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
 		92CEA6C01BA66EDD0047F3E9 /* UIButton+setBg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+setBg.h"; sourceTree = "<group>"; };
@@ -489,6 +484,17 @@
 		92CEA81C1BA66EDD0047F3E9 /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
 		92CEA8AA1BA671630047F3E9 /* PPRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRegisterViewController.h; sourceTree = "<group>"; };
 		92CEA8AB1BA671630047F3E9 /* PPRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRegisterViewController.m; sourceTree = "<group>"; };
+		92CEA8B21BA6B1F10047F3E9 /* PPNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNavigationViewController.h; sourceTree = "<group>"; };
+		92CEA8B31BA6B1F10047F3E9 /* PPNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNavigationViewController.m; sourceTree = "<group>"; };
+		92CEA8B51BA6B1F10047F3E9 /* PPUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUserInfo.h; sourceTree = "<group>"; };
+		92CEA8B61BA6B1F10047F3E9 /* PPUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUserInfo.m; sourceTree = "<group>"; };
+		92CEA8B71BA6B1F10047F3E9 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		92CEA8B81BA6B1F10047F3E9 /* XMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPTool.h; sourceTree = "<group>"; };
+		92CEA8B91BA6B1F10047F3E9 /* XMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPTool.m; sourceTree = "<group>"; };
+		92CEA8BE1BA6B3FD0047F3E9 /* UIStoryboard+JGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+JGL.h"; sourceTree = "<group>"; };
+		92CEA8BF1BA6B3FD0047F3E9 /* UIStoryboard+JGL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+JGL.m"; sourceTree = "<group>"; };
+		92CEA8C11BA6E72F0047F3E9 /* PPProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPProfileTableViewController.h; sourceTree = "<group>"; };
+		92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPProfileTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,34 +518,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		921D8EA51BA2D1300040FFC3 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				921D8EAD1BA2E95B0040FFC3 /* Singleton */,
-				921D8EA61BA2D15B0040FFC3 /* Controllers */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
-		921D8EA61BA2D15B0040FFC3 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				921D8EA71BA2D1AA0040FFC3 /* PPNavigationViewController.h */,
-				921D8EA81BA2D1AA0040FFC3 /* PPNavigationViewController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		921D8EAD1BA2E95B0040FFC3 /* Singleton */ = {
-			isa = PBXGroup;
-			children = (
-				921D8EAE1BA2E9B00040FFC3 /* Singleton.h */,
-				921D8EAF1BA2EA2B0040FFC3 /* PPUserInfo.h */,
-				921D8EB01BA2EA2B0040FFC3 /* PPUserInfo.m */,
-			);
-			name = Singleton;
-			sourceTree = "<group>";
-		};
 		9230AF971BA1D61B000CCCCA = {
 			isa = PBXGroup;
 			children = (
@@ -602,7 +580,6 @@
 			isa = PBXGroup;
 			children = (
 				92CEA6B51BA66EDD0047F3E9 /* lib */,
-				921D8EA51BA2D1300040FFC3 /* Common */,
 				9230B1191BA1D66A000CCCCA /* Main(主要) */,
 				92CEA8A61BA671490047F3E9 /* Register */,
 				9230B11F1BA1D66A000CCCCA /* Login(登录) */,
@@ -630,6 +607,8 @@
 				9230B11C1BA1D66A000CCCCA /* ViewController.m */,
 				921D8EAA1BA2E0D20040FFC3 /* PPMeTableViewController.h */,
 				921D8EAB1BA2E0D20040FFC3 /* PPMeTableViewController.m */,
+				92CEA8C11BA6E72F0047F3E9 /* PPProfileTableViewController.h */,
+				92CEA8C21BA6E72F0047F3E9 /* PPProfileTableViewController.m */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -723,6 +702,7 @@
 		92CEA6B51BA66EDD0047F3E9 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				92CEA8B01BA6B1F10047F3E9 /* Common */,
 				92CEA6B61BA66EDD0047F3E9 /* Category */,
 				92CEA6BE1BA66EDD0047F3E9 /* catg */,
 				92CEA6C81BA66EDD0047F3E9 /* third */,
@@ -737,8 +717,6 @@
 				92CEA6B71BA66EDD0047F3E9 /* CategoryWF.h */,
 				92CEA6B81BA66EDD0047F3E9 /* UIScreen+WF.h */,
 				92CEA6B91BA66EDD0047F3E9 /* UIScreen+WF.m */,
-				92CEA6BA1BA66EDD0047F3E9 /* UIStoryboard+WF.h */,
-				92CEA6BB1BA66EDD0047F3E9 /* UIStoryboard+WF.m */,
 				92CEA6BC1BA66EDD0047F3E9 /* UIView+WF.h */,
 				92CEA6BD1BA66EDD0047F3E9 /* UIView+WF.m */,
 			);
@@ -748,6 +726,7 @@
 		92CEA6BE1BA66EDD0047F3E9 /* catg */ = {
 			isa = PBXGroup;
 			children = (
+				92CEA8BD1BA6B3EB0047F3E9 /* UIStoryboard+JGL */,
 				92CEA6BF1BA66EDD0047F3E9 /* UIButton+SetBg */,
 				92CEA6C21BA66EDD0047F3E9 /* UIImage+JGL */,
 				92CEA6C51BA66EDD0047F3E9 /* UITextField+JGL */,
@@ -1619,6 +1598,45 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		92CEA8B01BA6B1F10047F3E9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				92CEA8B11BA6B1F10047F3E9 /* Controllers */,
+				92CEA8B41BA6B1F10047F3E9 /* Singleton */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		92CEA8B11BA6B1F10047F3E9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92CEA8B21BA6B1F10047F3E9 /* PPNavigationViewController.h */,
+				92CEA8B31BA6B1F10047F3E9 /* PPNavigationViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		92CEA8B41BA6B1F10047F3E9 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				92CEA8B51BA6B1F10047F3E9 /* PPUserInfo.h */,
+				92CEA8B61BA6B1F10047F3E9 /* PPUserInfo.m */,
+				92CEA8B71BA6B1F10047F3E9 /* Singleton.h */,
+				92CEA8B81BA6B1F10047F3E9 /* XMPPTool.h */,
+				92CEA8B91BA6B1F10047F3E9 /* XMPPTool.m */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		92CEA8BD1BA6B3EB0047F3E9 /* UIStoryboard+JGL */ = {
+			isa = PBXGroup;
+			children = (
+				92CEA8BE1BA6B3FD0047F3E9 /* UIStoryboard+JGL.h */,
+				92CEA8BF1BA6B3FD0047F3E9 /* UIStoryboard+JGL.m */,
+			);
+			path = "UIStoryboard+JGL";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1737,8 +1755,10 @@
 				92CEA8481BA66EDD0047F3E9 /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				92CEA87C1BA66EDD0047F3E9 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				92CEA82E1BA66EDD0047F3E9 /* NSNumber+XMPP.m in Sources */,
+				92CEA8BB1BA6B1F10047F3E9 /* PPUserInfo.m in Sources */,
 				92CEA8981BA66EDD0047F3E9 /* DDAbstractDatabaseLogger.m in Sources */,
 				92CEA8801BA66EDD0047F3E9 /* XMPPMessage+XEP_0172.m in Sources */,
+				92CEA8BA1BA6B1F10047F3E9 /* PPNavigationViewController.m in Sources */,
 				92CEA8691BA66EDD0047F3E9 /* XMPPResultSet.m in Sources */,
 				92CEA83B1BA66EDD0047F3E9 /* XMPPProcessOne.m in Sources */,
 				92CEA8631BA66EDD0047F3E9 /* XMPPvCardTempBase.m in Sources */,
@@ -1761,6 +1781,7 @@
 				92CEA8851BA66EDD0047F3E9 /* XMPPAutoPing.m in Sources */,
 				92CEA8411BA66EDD0047F3E9 /* XMPPUserCoreDataStorageObject.m in Sources */,
 				92CEA84B1BA66EDD0047F3E9 /* XMPPLastActivity.m in Sources */,
+				92CEA8BC1BA6B1F10047F3E9 /* XMPPTool.m in Sources */,
 				92CEA83A1BA66EDD0047F3E9 /* XMPPGoogleSharedStatus.m in Sources */,
 				92CEA8891BA66EDD0047F3E9 /* NSXMLElement+XEP_0203.m in Sources */,
 				92CEA83C1BA66EDD0047F3E9 /* XMPPReconnect.m in Sources */,
@@ -1771,13 +1792,13 @@
 				92CEA8571BA66EDD0047F3E9 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				92CEA8451BA66EDD0047F3E9 /* XMPPRoster.m in Sources */,
 				92CEA8A11BA66EDD0047F3E9 /* DDXMLDocument.m in Sources */,
+				92CEA8C01BA6B3FD0047F3E9 /* UIStoryboard+JGL.m in Sources */,
 				92CEA8261BA66EDD0047F3E9 /* XMPPAnonymousAuthentication.m in Sources */,
 				92CEA8861BA66EDD0047F3E9 /* XMPPPing.m in Sources */,
 				92CEA86E1BA66EDD0047F3E9 /* XMPPMessage+XEP_0066.m in Sources */,
 				92CEA8771BA66EDD0047F3E9 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				92CEA8231BA66EDD0047F3E9 /* MBProgressHUD+MJ.m in Sources */,
 				92CEA8931BA66EDD0047F3E9 /* RFImageToDataTransformer.m in Sources */,
-				92CEA81E1BA66EDD0047F3E9 /* UIStoryboard+WF.m in Sources */,
 				92CEA8A01BA66EDD0047F3E9 /* NSString+DDXML.m in Sources */,
 				92CEA86D1BA66EDD0047F3E9 /* XMPPIQ+XEP_0066.m in Sources */,
 				92CEA6B41BA66A140047F3E9 /* PPBaseLoginViewController.m in Sources */,
@@ -1795,9 +1816,8 @@
 				92CEA8731BA66EDD0047F3E9 /* XMPPTransports.m in Sources */,
 				92CEA88D1BA66EDD0047F3E9 /* NSXMLElement+XEP_0297.m in Sources */,
 				92CEA8721BA66EDD0047F3E9 /* XMPPSoftwareVersion.m in Sources */,
-				921D8EA91BA2D1AA0040FFC3 /* PPNavigationViewController.m in Sources */,
+				92CEA8C31BA6E72F0047F3E9 /* PPProfileTableViewController.m in Sources */,
 				92CEA8841BA66EDD0047F3E9 /* XMPPBlocking.m in Sources */,
-				921D8EB11BA2EA2B0040FFC3 /* PPUserInfo.m in Sources */,
 				92CEA84C1BA66EDD0047F3E9 /* XMPPPrivacy.m in Sources */,
 				92CEA8821BA66EDD0047F3E9 /* XMPPMessage+XEP_0184.m in Sources */,
 				92CEA81F1BA66EDD0047F3E9 /* UIView+WF.m in Sources */,

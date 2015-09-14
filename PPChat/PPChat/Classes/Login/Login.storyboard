@@ -314,7 +314,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="8oG-yZ-5Nd" secondAttribute="trailing" constant="84" id="lVU-fh-8Cq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="其他方式登录" id="N6I-B0-2GT">
+                    <navigationItem key="navigationItem" title="注册" id="N6I-B0-2GT">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="Mdz-pN-8yq">
                             <connections>
                                 <action selector="cancel:" destination="jO5-MY-8Rs" id="3ND-sz-Hc9"/>

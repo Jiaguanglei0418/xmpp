@@ -1,14 +1,14 @@
 //
-//  UIStoryboard+WF.m
-//  WeiXin
+//  UIStoryboard+JGL.m
+//  PPChat
 //
-//  Created by Yong Feng Guo on 14-11-20.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by jiaguanglei on 15/9/14.
+//  Copyright (c) 2015年 roseonly. All rights reserved.
 //
 
-#import "UIStoryboard+WF.h"
+#import "UIStoryboard+JGL.h"
 
-@implementation UIStoryboard (WF)
+@implementation UIStoryboard (JGL)
 
 +(void)showInitialVCWithName:(NSString *)name{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
@@ -16,8 +16,10 @@
     [UIApplication sharedApplication].keyWindow.rootViewController = storyboard.instantiateInitialViewController;
 }
 
+
 +(id)initialVCWithName:(NSString *)name{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:name bundle:nil];
     return [storyboard instantiateInitialViewController];
 }
+
 @end

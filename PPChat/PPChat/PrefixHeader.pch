@@ -12,11 +12,12 @@
 #import <UIKit/UIKit.h>
 
 #import "PPUserInfo.h"
-
+#import "XMPPTool.h" // 自定义工具类
 
 #import "UIImage+JGL.h"
 #import "UIButton+setBg.h"
 #import "UITextField+JGL.h"
+#import "UIStoryboard+JGL.h"
 #import "MBProgressHUD+MJ.h"
 
 

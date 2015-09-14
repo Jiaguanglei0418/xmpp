@@ -23,7 +23,10 @@
 //  The following is standard:
 
 #import "XMPP.h"
- 
+
+#import "XMPPvCardTempModule.h"
+#import "XMPPvCardCoreDataStorage.h" // 电子名片
+#import "XMPPvCardAvatarModule.h"  // 头像模块
 // List the modules you're using here:
 // (the following may not be a complete list)
 
@@ -49,8 +52,7 @@
 //#import "XMPPRoomCoreDataStorage.h"
 //#import "XMPPRoomHybridStorage.h"
 //
-//#import "XMPPvCardTempModule.h"
-//#import "XMPPvCardCoreDataStorage.h"
+
 //
 //#import "XMPPPubSub.h"
 //

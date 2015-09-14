@@ -75,12 +75,12 @@
     // 获取注册控制器 (此处获得的是导航控制器)
     id destVc = segue.destinationViewController;
     
-    if ([destVc isKindOfClass:[PPNavigationViewController class]]) {
-        PPNavigationViewController *nav = destVc;
-        
-        // 获取根控制器
-        PPRegisterViewController *registerVc = (PPRegisterViewController *)nav.topViewController;
-        
+    PPNavigationViewController *nav = destVc;
+    
+    // 获取根控制器
+    PPRegisterViewController *registerVc = (PPRegisterViewController *)nav.topViewController;
+    if ([registerVc isKindOfClass:[PPRegisterViewController class]]) {
+
         // 设置注册控制器
         registerVc.delegate = self;
     }

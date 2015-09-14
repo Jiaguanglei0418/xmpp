@@ -7,7 +7,6 @@
 //
 
 #import "PPRegisterViewController.h"
-#import "AppDelegate.h"
 #import "PPLoginViewController.h"
 
 @interface PPRegisterViewController ()
@@ -45,14 +44,13 @@
     
    
     // 2. 调用AppDelegate的xmpp Register方法
-    AppDelegate *app = PP_UIApplication.delegate;
-    app.registerOperation = YES;
+    [XMPPTool sharedXMPPTool].registerOperation = YES;
     
     // 提示
     [MBProgressHUD showMessage:@"正在注册中..." toView:self.view];
     
     WS(selfVc);
-    [app xmppUserRegister:^(XMPPResultType type) {
+    [[XMPPTool sharedXMPPTool] xmppUserRegister:^(XMPPResultType type) {
         // 处理请求结果 - 注册
         [selfVc handleResultType:type];
     }];
@@ -141,7 +139,7 @@
  *  设置 按钮不可用
  */
 - (IBAction)textChanged:(id)sender {
-    if (self.userField.text && self.pwdField.text) {
+    if ((self.userField.text != nil) && (self.pwdField.text != nil)) {
         self.registerBtn.enabled = YES;
     }
 }

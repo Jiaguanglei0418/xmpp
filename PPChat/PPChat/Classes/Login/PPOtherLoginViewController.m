@@ -7,7 +7,6 @@
 // 用户登录成功后, 如果关闭app, 重新启动 如果没有注销, 直接进入主页
 
 #import "PPOtherLoginViewController.h"
-#import "AppDelegate.h"
 
 
 @interface PPOtherLoginViewController ()

@@ -7,8 +7,6 @@
 //
 
 #import "PPBaseLoginViewController.h"
-#import "AppDelegate.h"
-
 
 @interface PPBaseLoginViewController ()
 
@@ -31,20 +29,16 @@
     // 键盘弹回
     [self.view endEditing:YES];
     
-    
     // 2. 调用AppDelegate connect 连接并登陆 --- 回调
     // 登录之前提示
     [MBProgressHUD showMessage:@"正在拼命登录中...." toView:self.view];
     
-    AppDelegate *app = PP_UIApplication.delegate;
-
     // 注册标识 
-    app.registerOperation = NO;
-    
+    [XMPPTool sharedXMPPTool].registerOperation = NO;
     
     WS(selfVc);
     
-    [app xmppUserLogin:^(XMPPResultType type) {
+    [[XMPPTool sharedXMPPTool] xmppUserLogin:^(XMPPResultType type) {
         
         [selfVc handleResultType:type];
     }];

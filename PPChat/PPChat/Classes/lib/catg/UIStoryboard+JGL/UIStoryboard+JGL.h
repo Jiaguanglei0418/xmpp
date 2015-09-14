@@ -1,18 +1,20 @@
 //
-//  UIStoryboard+WF.h
-//  WeiXin
+//  UIStoryboard+JGL.h
+//  PPChat
 //
-//  Created by Yong Feng Guo on 14-11-20.
-//  Copyright (c) 2014年 Fung. All rights reserved.
+//  Created by jiaguanglei on 15/9/14.
+//  Copyright (c) 2015年 roseonly. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIStoryboard (WF)
+@interface UIStoryboard (JGL)
+
 
 /**
  * 1.显示Storybaord的第一个控制器到窗口
  */
 +(void)showInitialVCWithName:(NSString *)name;
 +(id)initialVCWithName:(NSString *)name;
+
 @end
