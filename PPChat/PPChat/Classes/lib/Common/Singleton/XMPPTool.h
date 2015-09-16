@@ -21,12 +21,16 @@
 #import "Singleton.h"
 #import "XMPPFramework.h"
 
+extern NSString *const PPLoginStatusChangeNotification; // 监听网络请求状态 --- 
+
 typedef enum {
+    XMPPResultTypeConnecting, // 连接中
     XMPPResultTypeLoginSuccess, // 登录成功
     XMPPResultTypeLoginFailure, // 失败
     XMPPResultTypeNetError, // 网络不给力
     XMPPResultTypeRegisterSuccess, // 注册成功
     XMPPResultTypeRegisterFailure  // 注册失败
+    
 }XMPPResultType;
 
 typedef void (^XMPPResultBlock) (XMPPResultType type); // 登录请求结果block
@@ -36,13 +40,16 @@ typedef void (^XMPPResultBlock) (XMPPResultType type); // 登录请求结果bloc
 
 singleton_interface(XMPPTool)
 
-@property (nonatomic, strong) XMPPvCardTempModule *vCard;//电子名片 - 便于meCon 调用
+@property (nonatomic, strong, readonly) XMPPvCardTempModule *vCard;//电子名片 - 便于meCon 调用
 
-@property (nonatomic, strong) XMPPReconnect *reconnect;//自动连接模块
+@property (nonatomic, strong, readonly) XMPPReconnect *reconnect;//自动连接模块
 
-@property (nonatomic, strong) XMPPRosterCoreDataStorage *rosterStorage;// 花名册 - 数据存储;
+@property (nonatomic, strong, readonly) XMPPRosterCoreDataStorage *rosterStorage;// 花名册 - 数据存储;
+@property (nonatomic, strong, readonly) XMPPRoster *roster;//花名册模块-添加联系人
 
+@property (nonatomic, strong, readonly) XMPPStream *xmppStream; // 添加联系人好用
 
+@property (nonatomic, strong, readonly) XMPPMessageArchivingCoreDataStorage *msgStorage;// 聊天的数据存储
 
 /**
  *  注册标识  yes - 注册  no - 登录

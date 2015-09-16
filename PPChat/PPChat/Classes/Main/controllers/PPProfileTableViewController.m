@@ -65,7 +65,14 @@
     self.phoneLabel.text = myvCard.note;
     // 邮件
 #warning myvCard.telecomsAddresses 此方法没有对mycardxml-数据进行解析
-    self.emailLabel.text = myvCard.mailer;
+//    self.emailLabel.text = myvCard.mailer;
+    // 邮件解析
+    if (myvCard.emailAddresses.count > 0) { // 不管有多少个邮箱只显示第一个
+        self.emailLabel.text = [myvCard.emailAddresses firstObject];
+    }
+    
+    // 保存
+    
 }
 
 
@@ -155,7 +162,12 @@
     myVCard.note = self.phoneLabel.text;
     
     // 邮件
-    myVCard.mailer = self.emailLabel.text;
+//    myVCard.mailer = self.emailLabel.text;
+    if (myVCard.emailAddresses.count > 0) {
+        // 保存
+        myVCard.emailAddresses = @[self.emailLabel.text];
+    }
+    
     
     // 头像
     myVCard.photo = UIImagePNGRepresentation(self.headerImageView.image);

@@ -8,17 +8,17 @@
 
 #import "XMPPTool.h"
 
+NSString *const PPLoginStatusChangeNotification = @"PPLoginStatusChangeNotification";
+
 @interface XMPPTool ()<XMPPStreamDelegate>
 {
-    XMPPStream *_xmppStream;
     XMPPResultBlock _resultBlock;
     
     
     XMPPvCardCoreDataStorage *_vCardStorage; //电子名片数据库
-    XMPPvCardAvatarModule *_avatar; // 头像
+    XMPPvCardAvatarModule *_avatar; // 头像模块
     
-    XMPPRoster *_roster;// 花名册模块
-    
+    XMPPMessageArchiving *_msgArchiving;//聊天模块
 }
 
 // 1. 初始化xmppStream
@@ -73,13 +73,21 @@ singleton_implementation(XMPPTool)
     
     
     // 1.4 添加花名册模块 - 获取好友列表
-    _rosterStorage = [[XMPPRosterCoreDataStorage alloc] init];
+    _rosterStorage = [XMPPRosterCoreDataStorage sharedInstance];
     _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorage];
     // 激活
     [_roster activate:_xmppStream];
     
     
-
+    // 1.5 添加聊天模块
+    _msgStorage = [XMPPMessageArchivingCoreDataStorage sharedInstance];
+    _msgArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_msgStorage];
+    // 模块激活
+    [_msgArchiving activate:_xmppStream];
+    
+    // 设置后台接收通知  ----  iOS8 之前需要设置
+//    _xmppStream.enableBackgroundingOnSocket = YES;
+    
     // 设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
@@ -92,9 +100,12 @@ singleton_implementation(XMPPTool)
         [self setupXMPPSteam];
     }
     
+    // 发送通知 -- 正在连接服务器
+    [self postNoticefication:XMPPResultTypeConnecting];
+    
+    
     // 设置JID
     // resource: 标识用户登录客户端, iPhone,android
-    
     NSString *user = nil;
     
     if (self.isRegisterOperation) { // ---  注册
@@ -154,10 +165,11 @@ singleton_implementation(XMPPTool)
     PPLog(@"授权成功以后, 发送在线消息--");
     
     XMPPPresence *presence = [XMPPPresence presence];
-    PPLog(@"presence - %@",presence);
+//    PPLog(@"presence - %@",presence);
     //
     [_xmppStream sendElement:presence];
 }
+
 
 #pragma mark - 5. 释放xmpp相关资源
 - (void)teardownXMPP
@@ -170,6 +182,7 @@ singleton_implementation(XMPPTool)
     [_vCard deactivate];
     [_avatar deactivate];
     [_roster deactivate];
+    [_msgArchiving deactivate];
     
     // 断开连接
     [_xmppStream disconnect];
@@ -182,8 +195,16 @@ singleton_implementation(XMPPTool)
     _xmppStream = nil;
     _roster = nil;
     _rosterStorage = nil;
+    _msgArchiving = nil;
+    _msgStorage = nil;
 }
 
+#pragma mark - 监听网络请求状态 - [通知]- PPHistoryViewController
+- (void)postNoticefication:(XMPPResultType)resultType
+{
+    NSDictionary *userInfo = @{@"loginStatus" : @(resultType)};
+    [PP_NOTICEFICATIONCENTER postNotificationName:PPLoginStatusChangeNotification object:self userInfo:userInfo];
+}
 
 //------------------------------- XMPPStreamDelegate ---------------------------------
 #pragma mark - XMPPStreamDelegate
@@ -211,6 +232,10 @@ singleton_implementation(XMPPTool)
     }else{  // 如果没有错误, 是人为断开的连接
         PPLog(@"人为断开了连接");
     }
+    
+    if (error){ // 连接服务器错误 ----  XMPPResultTypeNetError
+        [self postNoticefication:XMPPResultTypeNetError];
+    }
 }
 
 
@@ -222,6 +247,7 @@ singleton_implementation(XMPPTool)
     if(_resultBlock){
         _resultBlock(XMPPResultTypeRegisterSuccess);
     }
+
 }
 
 #pragma mark - 注册失败
@@ -248,6 +274,10 @@ singleton_implementation(XMPPTool)
     if(_resultBlock){
         _resultBlock(XMPPResultTypeLoginSuccess);
     }
+    
+    // 发送通知
+    [self postNoticefication:XMPPResultTypeLoginSuccess];
+
 }
 
 
@@ -263,8 +293,36 @@ singleton_implementation(XMPPTool)
     if(_resultBlock){
         _resultBlock(XMPPResultTypeLoginFailure);
     }
+    
+    // 发送通知
+    [self postNoticefication:XMPPResultTypeLoginFailure];
 }
 
+
+#pragma mark - 接收到好友信息 - 发送本地通知
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+{
+//    LogRed(@"message = %@",message);
+    
+    // 如果当前的程序不在前台, 发出一个本地通知  ----  需要注册应用接收通知
+    if(PP_UIApplication.applicationState != UIApplicationStateActive){
+        // 发送本地通知
+        UILocalNotification *localNoti = [[UILocalNotification alloc] init];
+        
+        // 设置内容
+        localNoti.alertBody = [NSString stringWithFormat:@"%@@%@",message.fromStr,message.body];
+        
+        // 设置执行时间
+        localNoti.fireDate = [NSDate date];
+        
+        // 设置声音
+        localNoti.soundName = @"default";
+        
+        // 执行通知
+        [PP_UIApplication scheduleLocalNotification:localNoti];
+    }
+    
+}
 
 // ---------------------------------  公共方法  ----------------------------------------
 #pragma mark - 公共方法

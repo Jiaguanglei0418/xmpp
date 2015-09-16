@@ -21,7 +21,7 @@
     
     
     // 打开日志
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     // 设置状态栏
     [UIApplication sharedApplication].statusBarHidden = NO;
@@ -38,12 +38,23 @@
         self.window.rootViewController = storyboard.instantiateInitialViewController;
         
         // 自动登录服务器(已近登陆过,再次进入程序,之前与服务器的链接 已断开)
-        [[XMPPTool sharedXMPPTool] xmppUserLogin:nil];
+        // 1s 后自动登录
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[XMPPTool sharedXMPPTool] xmppUserLogin:nil];
+        });
         
     }else{
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         self.window.rootViewController = storyboard.instantiateInitialViewController;
+    }
+    
+#pragma mark - 注册通知
+    if([PP_UIDevice.systemVersion floatValue] > 8.0){
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        
+        // 执行
+        [application registerUserNotificationSettings:setting];
     }
     
     return YES;
@@ -60,7 +71,8 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    // 进入前台, 设置通知个数为0
+    [[UIApplication sharedApplication]setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

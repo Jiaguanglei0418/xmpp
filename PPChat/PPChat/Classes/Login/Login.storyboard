@@ -172,7 +172,7 @@
                                             <action selector="LoginBtnClicked:" destination="Ocs-yB-pcR" eventType="touchUpInside" id="kFQ-gY-3fg"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zhangsan" placeholder="请输入账号" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="h97-AH-ZTA">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zhangsan" placeholder="请输入账号" textAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h97-AH-ZTA">
                                         <rect key="frame" x="0.0" y="8" width="400" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -279,7 +279,7 @@
                                             <action selector="registerBtnClicked:" destination="jO5-MY-8Rs" eventType="touchUpInside" id="dsf-vE-ITp"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="s60-2k-XBu">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入账号" textAlignment="center" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s60-2k-XBu">
                                         <rect key="frame" x="0.0" y="8" width="400" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>

@@ -24,14 +24,19 @@
 
 #import "XMPP.h"
 
-#import "XMPPvCardTempModule.h"
-#import "XMPPvCardCoreDataStorage.h" // 电子名片
+#import "XMPPvCardTempModule.h" // 电子名片
+#import "XMPPvCardCoreDataStorage.h" // 电子名片存储
 #import "XMPPvCardAvatarModule.h"  // 头像模块
 
 #import "XMPPReconnect.h" // 自动连接模块
 
 #import "XMPPRoster.h"// 花名册模块
-#import "XMPPRosterCoreDataStorage.h"
+#import "XMPPRosterCoreDataStorage.h"// 数据存储
+
+#import "XMPPMessageArchiving.h"// 消息模块
+#import "XMPPMessageArchivingCoreDataStorage.h"//消息存储
+
+
 
 // List the modules you're using here:
 // (the following may not be a complete list)

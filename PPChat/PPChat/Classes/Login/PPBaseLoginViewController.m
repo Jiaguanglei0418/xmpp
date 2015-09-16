@@ -95,10 +95,13 @@
     
     // 授权成功 - 跳转到主界面
     // 获取storyboard
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    
+//    // 获取storyboard 第一个控制器
+//    self.view.window.rootViewController = storyboard.instantiateInitialViewController;
     
-    // 获取storyboard 第一个控制器
-    self.view.window.rootViewController = storyboard.instantiateInitialViewController;
+    [UIStoryboard showInitialVCWithName:@"Main"];
+    
 }
 
 @end

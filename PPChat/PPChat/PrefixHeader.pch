@@ -27,9 +27,10 @@
 #define KEY_LoginStatus @"loginStatus" // 密码
 
 #define PP_NSUSRDEFAULT [NSUserDefaults standardUserDefaults] // NSUserDefault
-#define PP_UIApplication [UIApplication sharedApplication] 
-#define PP_UIDevice [UIDevice currentDevice]
+#define PP_UIApplication [UIApplication sharedApplication] // 应用
+#define PP_UIDevice [UIDevice currentDevice] // 设备
 
+#define PP_NOTICEFICATIONCENTER [NSNotificationCenter defaultCenter] // 通知
 #define PP_DOMAIN @"localhost" //域名
 
 // ------------------------------------------------------------
@@ -76,7 +77,11 @@ NSLog(@"%@----->%@",content,string); \
 
 
 // ---------------------------------------------------------------------------------
-
+// 屏幕尺寸
+#define PP_SCREEN_RECT [UIScreen mainScreen].bounds
+#define PP_SCREEN_SIZE [UIScreen mainScreen].bounds.size
+#define PP_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define PP_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
 #endif

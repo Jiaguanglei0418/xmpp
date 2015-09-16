@@ -321,12 +321,57 @@ NSString *const kXMPPvCardTempElement = @"vCard";
 - (void)clearTelecomsAddresses { }
 
 
-- (NSArray *)emailAddresses { return nil; }
+
 - (void)addEmailAddress:(XMPPvCardTempEmail *)email { }
 - (void)removeEmailAddress:(XMPPvCardTempEmail *)email { }
-- (void)setEmailAddresses:(NSArray *)emails { }
+
 - (void)clearEmailAddresses { }
 
+// 解析邮箱
+- (NSArray *)emailAddresses
+{
+    /**
+     *  <EMAIL>
+     <HOME />
+     <INTERNET />
+     <PREF />
+     <USERID>2318336342@qq.com</USERID>
+     </EMAIL>
+     */
+    // 1.获取email 标签
+    NSXMLElement *emailElement = [self elementForName:@"EMAIL"];
+    
+    // 2. 通过email标签获得USERID
+    NSXMLElement *userID = [emailElement elementForName:@"USERID"];
+    
+    NSString *email = [userID stringValue];
+    if (email.length > 0) {
+        return @[email];
+    }
+    return nil;
+}
+
+// set
+- (void)setEmailAddresses:(NSArray *)emails
+{
+    if (emails.count == 0){ // 没有邮箱
+        return;
+    }
+    
+    // 1. 获取email 标签
+    NSXMLElement *emailElement = [self elementForName:@"EMAIL"];
+    
+    // 2. 移除旧的USERID标签
+    [emailElement removeElementForName:@"userID"];
+    
+    // 3. 创建USERID标签
+    // 只去第一个邮箱, 保存
+    NSString *emailStr = emails[0];
+    NSXMLElement *userID = [NSXMLElement elementWithName:@"userID" stringValue:emailStr];
+
+    // 4. 添加新的USERID
+    [emailElement addChild:userID];
+}
 
 - (XMPPJID *)jid {
 	XMPPJID *jid = nil;
